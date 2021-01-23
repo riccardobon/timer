@@ -1,7 +1,6 @@
 Timer 
 ================
-First version developed on 
-2019-03-26
+First version developed on 2019-03-26
 
 ## Introduction
 
@@ -82,4 +81,55 @@ class DemoTimer():
 if __name__ == '__main__':
     d = DemoTimer()
     d.run_demo()
+```
+
+
+## Creating a development environment
+The following are some notes for creating from scratch a Python development environment,
+setting up **virtualenv** and installing all the needed packages for this project.
+
+In case it shoud be missing, install from root the package installer **pip**. For example in Debian 10 
+we can do it in this way:
+
+``` bash
+apt-get update
+apt-get install python3-pip
+```
+
+Upgrade **pip** and install **virtualenv** (run only once from the standard user):
+
+``` bash
+python3 -m pip install --upgrade pip --user
+python3 -m pip install virtualenv --user
+```
+
+Also it is a good idea to add the **~/.local/bin** folder to the **PATH** environment variable.
+Now move to the project folder and create a virtual envirnoment:
+
+``` bash
+virtualenv --python=python3.7 .vrtenv
+```
+
+For activating the virtual environment we run:
+
+``` bash
+source .vrtenv/bin/activate
+```
+
+Simply we deactivate with:
+
+``` bash
+deactivate
+```
+
+We need to install some tools for unit testing:
+
+``` bash
+python -m pip install nose rednose pytest coverage pytest-cov
+```
+
+We might also want to perform some *code linting* and maybe some *static type checking* too:
+
+``` bash
+python -m pip install flake8 pylint mypy
 ```
