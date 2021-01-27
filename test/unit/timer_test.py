@@ -1,4 +1,4 @@
-"""Tesing suite for Timer class"""
+"""Test suite for timer_module"""
 
 import unittest
 import asyncio
@@ -10,8 +10,10 @@ from timer_module.timer import Timer
 
 
 class TestTimer(unittest.TestCase):
-    """Tesing interval and num_ticks properties; as well as the run method"""
+    """Testing Timer class"""
+
     def setUp(self) -> None:
+        """Initializing tests"""
         # Array for registering the start and the end times for each event
         self._start_times: List[float] = []
         self._end_times: List[float] = []
